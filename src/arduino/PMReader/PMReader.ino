@@ -1,22 +1,3 @@
-//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-//  Demo: interfacing a Plantower PMS7003 air quality sensor to a Particle IoT microcontroller
-/*
-    Copyright (c) 2016 Martin F. Falatic
-    
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-        http://www.apache.org/licenses/LICENSE-2.0
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
-//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
 #define keepAlivePinNr 10
 int incomingByte = 0; // for incoming serial data
 
@@ -28,7 +9,6 @@ bool inFrame = false;
 char printbuf[256];
 const bool DEBUG = false;
 
-
 uint16_t calcChecksum = 0;
 
 struct PMS7003_framestruct {
@@ -37,7 +17,6 @@ struct PMS7003_framestruct {
     uint16_t concPM1_0_CF1;
     uint16_t concPM2_5_CF1;
     uint16_t concPM10_0_CF1;
-    uint8_t  version;
     uint16_t checksum;
 } thisFrame;
 
@@ -95,10 +74,6 @@ bool pms7003_read() {
                         break;
                     case 10:
                         thisFrame.concPM10_0_CF1 = val;
-                        break;                   
-                    case 29:
-                        val = frameBuf[detectOff-1];
-                        thisFrame.version = val;
                         break;
                     case 32:
                         thisFrame.checksum = val;
