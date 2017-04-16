@@ -1,4 +1,4 @@
-# PlantowerPMInterface
+# PlantowerCSVLogger
 The main goal of this repo is reading out Plantower™ sensors and providing a serial CSV-formatted stream for fast and simple data capture without having to worry about any additional incoming data.
 
 ## Interface connections (Sensor & Arduino)
