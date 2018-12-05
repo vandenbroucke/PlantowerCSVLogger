@@ -4,7 +4,7 @@ The main goal of this repo is reading out Plantower™ sensors and providing a s
 ## Interface connections (Sensor & Arduino)
 The following connections are required in order for this build to function properly. For this example a [Plantower](http://www.plantower.com/) PMS7003 particulate matter sensor was used.
 
-![Arduino micro plantower pms7003 setup](https://portalvhds601hqnwxgfhc9.blob.core.windows.net/cdn/media/github_plantower_setup "Arduino micro plantower pms7003 setup")
+![Arduino micro plantower pms7003 setup](https://raw.githubusercontent.com/vandenbroucke/PlantowerCSVLogger/master/Docs/Assets/IMG_20170328_010040.jpg)
 
 
 | Sensor (Plantower)| Arduino           |Cable color|Additional info|
